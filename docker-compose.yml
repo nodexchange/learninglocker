@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:4
+    volumes:
+      - mongodata:/data/db/mongo
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis
+    volumes:
+      - mongodata:/data/db/redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongodata:
